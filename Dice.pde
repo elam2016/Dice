@@ -5,6 +5,9 @@ void setup()
 void draw()
 {
 	//your code here
+	background(0);
+	Dice die1 = new Dice();
+	die1.show();
 }
 void mousePressed()
 {
