@@ -29,24 +29,32 @@ class Die //models one single dice cube
 	}
 	void roll()
 	{ //your code here
-		numRoll = 5;//(int)(Math.random()*6) + 1;
+		numRoll = 3;//(int)(Math.random()*6) + 1;
 	}
 	void show()
 	{ //your code here
 		fill(255);
 		rect(myX, myY, mySize, mySize);
 		fill(0);
-		if (numRoll == 5)
+		if (numRoll == 1)
 		{
-			ellipse(myX + 10, myY + 10, mySize - 40, mySize - 40);
 			ellipse(myX + 25, myY + 25, mySize - 40, mySize - 40);
-			ellipse(myX + 40, myY + 40, mySize - 40, mySize - 40);
+		}
+		if(numRoll == 3)
+		{
+			numRoll = 1;
 			ellipse(myX + 10, myY + 10, mySize - 40, mySize - 40);
 			ellipse(myX + 40, myY + 40, mySize - 40, mySize - 40);
 		}
+		if (numRoll == 5)
+		{
+			ellipse(myX + 40, myY + 10, mySize - 40, mySize - 40);
+			ellipse(myX + 10, myY + 40, mySize - 40, mySize - 40);
+		}
 		if (numRoll == 2)
 		{
-			ellipse(myX + 25, myY + 25, mySize - 40, mySize - 40);
+			ellipse(myX + 10, myY + 10, mySize - 40, mySize - 40);
+			ellipse(myX + 40, myY + 40, mySize - 40, mySize - 40);
 		}
 	}
 }
