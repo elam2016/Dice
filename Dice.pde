@@ -8,8 +8,12 @@ void draw()
 	//your code here
 	background(0);
 	Die die1 = new Die(50, 50, 50);
+	Die die2 = new Die(100, 100, 50);
 	die1.roll();
 	die1.show();
+	die2.roll();
+	die2.show();
+	//text()
 }
 void mousePressed()
 {
@@ -17,20 +21,33 @@ void mousePressed()
 }
 class Die //models one single dice cube
 { //variable declarations here
-	int myX;
-	int myY;
-	int mySize;
-	int numRoll;
+	int myX, myY, mySize, numRoll;
 	Die(int x, int y, int cubeSize) //constructor
 	{ //variable initializations here
 		myX = x;
 		myY = y;
 		mySize = cubeSize;
+		//sum = numRoll;
 	}
 	void roll()
 	{ //your code here
-		numRoll = 3;//(int)(Math.random()*6) + 1;
+		numRoll = (int)(Math.random()*6) + 1;
 	}
+	int pipSize = mySize - 40;
+	class Pip
+	{
+		Pip(int pX, int pY, int numPips)
+		{
+			pipX = pX;
+			pipY = pY;
+			dots = numPips
+		}
+		void drawDots()
+		{
+			ellipse(pipX, pipY, pipSize, pipSize);
+		}
+	}
+	Pip one = new Pip()
 	void show()
 	{ //your code here
 		fill(255);
@@ -38,23 +55,40 @@ class Die //models one single dice cube
 		fill(0);
 		if (numRoll == 1)
 		{
-			ellipse(myX + 25, myY + 25, mySize - 40, mySize - 40);
-		}
-		if(numRoll == 3)
-		{
-			numRoll = 1;
-			ellipse(myX + 10, myY + 10, mySize - 40, mySize - 40);
-			ellipse(myX + 40, myY + 40, mySize - 40, mySize - 40);
-		}
-		if (numRoll == 5)
-		{
-			ellipse(myX + 40, myY + 10, mySize - 40, mySize - 40);
-			ellipse(myX + 10, myY + 40, mySize - 40, mySize - 40);
+			(myX + 25, myY + 25, pipSize, pipSize);
 		}
 		if (numRoll == 2)
 		{
-			ellipse(myX + 10, myY + 10, mySize - 40, mySize - 40);
-			ellipse(myX + 40, myY + 40, mySize - 40, mySize - 40);
+			ellipse(myX + 10, myY + 10, pipSize, pipSize);
+			ellipse(myX + 40, myY + 40, pipSize, pipSize);
+		}
+		if(numRoll == 3)
+		{
+			ellipse(myX + 25, myY + 25, pipSize, pipSize);
+			ellipse(myX + 10, myY + 10, pipSize, pipSize);
+			ellipse(myX + 40, myY + 40, pipSize, pipSize);
+		}
+		if (numRoll == 4)
+		{
+			ellipse(myX + 10, myY + 10, pipSize, pipSize);
+			ellipse(myX + 40, myY + 40, pipSize, pipSize);
+			ellipse(myX + 40, myY + 10, pipSize, pipSize);
+			ellipse(myX + 10, myY + 40, pipSize, pipSize);
+		}
+		if (numRoll == 5)
+		{
+			ellipse(myX + 25, myY + 25, pipSize, pipSize);
+			ellipse(myX + 10, myY + 10, pipSize, pipSize);
+			ellipse(myX + 40, myY + 40, pipSize, pipSize);
+			ellipse(myX + 40, myY + 10, pipSize, pipSize);
+			ellipse(myX + 10, myY + 40, pipSize, pipSize);
+		}
+		if (numRoll == 6)
+		{
+			ellipse(myX + 10, myY + 10, pipSize, pipSize);
+			ellipse(myX + 40, myY + 40, pipSize, pipSize);
+			ellipse(myX + 40, myY + 10, pipSize, pipSize);
+			ellipse(myX + 10, myY + 40, pipSize, pipSize);
 		}
 	}
 }
