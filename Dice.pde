@@ -1,18 +1,31 @@
+int screenSize = 300;
 void setup()
 {
-	size(200,200);
+	size(screenSize,screenSize);
 	noLoop();
 }
 void draw()
 {
 	//your code here
 	background(0);
-	Die die1 = new Die(50, 50, 50);
-	Die die2 = new Die(100, 100, 50);
-	die1.roll();
-	die1.show();
-	die2.roll();
-	die2.show();
+	for(int dieY = 0; dieY <= screenSize; dieY += 100)
+	{
+		for(int dieX = 0; dieX <= screenSize; dieX += 100)
+		{
+			Die die1 = new Die(dieX, dieY, 50);
+			die1.roll();
+			die1.show();
+		}
+	}
+	for(int dieY = 50; dieY <= screenSize; dieY += 100)
+	{
+		for(int dieX = 50; dieX <= screenSize; dieX += 100)
+		{
+			Die die1 = new Die(dieX, dieY, 50);
+			die1.roll();
+			die1.show();
+		}
+	}
 	//text()
 }
 void mousePressed()
@@ -21,33 +34,19 @@ void mousePressed()
 }
 class Die //models one single dice cube
 { //variable declarations here
-	int myX, myY, mySize, numRoll;
+	int myX, myY, mySize, numRoll, pipSize;
 	Die(int x, int y, int cubeSize) //constructor
 	{ //variable initializations here
 		myX = x;
 		myY = y;
 		mySize = cubeSize;
+		pipSize = mySize - 40;
 		//sum = numRoll;
 	}
 	void roll()
 	{ //your code here
 		numRoll = (int)(Math.random()*6) + 1;
 	}
-	int pipSize = mySize - 40;
-	class Pip
-	{
-		Pip(int pX, int pY, int numPips)
-		{
-			pipX = pX;
-			pipY = pY;
-			dots = numPips
-		}
-		void drawDots()
-		{
-			ellipse(pipX, pipY, pipSize, pipSize);
-		}
-	}
-	Pip one = new Pip()
 	void show()
 	{ //your code here
 		fill(255);
@@ -55,7 +54,7 @@ class Die //models one single dice cube
 		fill(0);
 		if (numRoll == 1)
 		{
-			(myX + 25, myY + 25, pipSize, pipSize);
+			ellipse(myX + 25, myY + 25, pipSize, pipSize);
 		}
 		if (numRoll == 2)
 		{
@@ -89,6 +88,8 @@ class Die //models one single dice cube
 			ellipse(myX + 40, myY + 40, pipSize, pipSize);
 			ellipse(myX + 40, myY + 10, pipSize, pipSize);
 			ellipse(myX + 10, myY + 40, pipSize, pipSize);
+			ellipse(myX + 40, myY + 25, pipSize, pipSize);
+			ellipse(myX + 10, myY + 25, pipSize, pipSize);
 		}
 	}
 }
