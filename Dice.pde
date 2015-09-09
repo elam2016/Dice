@@ -30,6 +30,7 @@ void draw()
 	}
 	fill(197);
 	text("Total: " + numRoll, 10, 10);
+	fill(255);
 }
 void mousePressed()
 {
