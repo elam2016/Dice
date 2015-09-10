@@ -28,7 +28,7 @@ void draw()
 			die2.show();
 		}
 	}
-	fill(0);
+	fill(200);
 	text("Total: " + numRoll, 50, 10);
 	fill(255);
 }
