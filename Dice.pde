@@ -55,7 +55,7 @@ class Die //models one single dice cube
 	{ //your code here
 		fill(225);
 		rect(myX, myY, mySize, mySize);
-		fill((Math.random()*150) + 100, (Math.random()*150) + 100, (Math.random()*150) + 100);
+		fill((Math.random()*100) + 100, (Math.random()*100) + 100, (Math.random()*100) + 100);
 		if (numRoll == 1)
 		{
 			//numTotal = 1;
