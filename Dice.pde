@@ -17,7 +17,6 @@ void draw()
 		for(int dieX = 0; dieX <= screenSize; dieX += mySize*2)
 		{
 			Die die1 = new Die(dieX, dieY, mySize);
-			//die1.roll();
 			die1.show();
 			//numTotal = numTotal + die1.numRoll;
 		}
@@ -27,13 +26,12 @@ void draw()
 		for(int dieX = mySize; dieX <= screenSize; dieX += mySize*2)
 		{
 			Die die2 = new Die(dieX, dieY, mySize);
-			//die2.roll();
 			die2.show();
 			//numTotal = numTotal + die2.numRoll;
 		}
 	}
 	fill(197);
-	text("Total: " + numRoll, 10, 10);
+	text("Total: " + numTotal, 10, 10);
 	fill(255);
 }
 void mousePressed()
@@ -45,42 +43,42 @@ class Die //models one single dice cube
 { //variable declarations here
 	Die(int x, int y, int cubeSize) //constructor
 	{ //variable initializations here
+		numRoll = ((int)(Math.random()*6) + 1);
 		myX = x;
 		myY = y;
 		mySize = cubeSize;
 		pipSize = mySize/5;
-		numRoll = ((int)(Math.random()*6) + 1);
 	}
 	void show()
 	{ //your code here
 		fill(225);
 		rect(myX, myY, mySize, mySize);
-		fill((Math.random()*100) + 100, (Math.random()*100) + 100, (Math.random()*100) + 100);
+		fill((Math.random()*150) + 75, (Math.random()*150) + 75, (Math.random()*150) + 75);
 		if (numRoll == 1)
 		{
-			//numTotal = 1;
+			numTotal ++;
 			ellipse(myX + mySize/2, myY + mySize/2, pipSize, pipSize);
 		} else if (numRoll == 2)
 		{
-			//numTotal = 2;
+			numTotal += 2;
 			ellipse(myX + mySize/5, myY + mySize/5, pipSize, pipSize);
 			ellipse(myX + (mySize*4/5), myY + (mySize*4/5), pipSize, pipSize);
 		} else if(numRoll == 3)
 		{
-			//numTotal = 3;
+			numTotal += 3;
 			ellipse(myX + mySize/2, myY + mySize/2, pipSize, pipSize);
 			ellipse(myX + mySize/5, myY + mySize/5, pipSize, pipSize);
 			ellipse(myX + (mySize*4/5), myY + (mySize*4/5), pipSize, pipSize);
 		} else if (numRoll == 4)
 		{
-			//numTotal = 4;
+			numTotal += 4;
 			ellipse(myX + mySize/5, myY + mySize/5, pipSize, pipSize);
 			ellipse(myX + (mySize*4/5), myY + (mySize*4/5), pipSize, pipSize);
 			ellipse(myX + (mySize*4/5), myY + mySize/5, pipSize, pipSize);
 			ellipse(myX + mySize/5, myY + (mySize*4/5), pipSize, pipSize);
 		} else if (numRoll == 5)
 		{
-			//numTotal = 5;
+			numTotal += 5;
 			ellipse(myX + mySize/2, myY + mySize/2, pipSize, pipSize);
 			ellipse(myX + mySize/5, myY + mySize/5, pipSize, pipSize);
 			ellipse(myX + (mySize*4/5), (myY + mySize*4/5), pipSize, pipSize);
@@ -88,7 +86,7 @@ class Die //models one single dice cube
 			ellipse(myX + mySize/5, myY + (mySize*4/5), pipSize, pipSize);
 		} else
 		{
-			//numTotal = 6;
+			numTotal += 6;
 			ellipse(myX + mySize/5, myY + mySize/5, pipSize, pipSize);
 			ellipse(myX + (mySize*4/5), myY + (mySize*4/5), pipSize, pipSize);
 			ellipse(myX + (mySize*4/5), myY + mySize/5, pipSize, pipSize);
