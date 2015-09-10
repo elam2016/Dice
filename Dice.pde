@@ -1,4 +1,4 @@
-int screenSize = 300;
+int screenSize = 400;
 int myX, myY, mySize, numRoll, pipSize;
 void setup()
 {
@@ -9,8 +9,8 @@ void draw()
 {
 	//your code here
 	background(0);
-	mySize = 30;
-	for(int dieY = 0; dieY <= screenSize; dieY += mySize*2)
+	mySize = screenSize/10;
+	for(int dieY = 0; dieY <= screenSize; dieY += mySize*2) //first rows
 	{
 		for(int dieX = 0; dieX <= screenSize; dieX += mySize*2)
 		{
@@ -19,7 +19,7 @@ void draw()
 			die1.show();
 		}
 	}
-	for(int dieY = mySize; dieY <= screenSize; dieY += mySize*2)
+	for(int dieY = mySize; dieY <= screenSize; dieY += mySize*2) //second rows
 	{
 		for(int dieX = mySize; dieX <= screenSize; dieX += mySize*2)
 		{
