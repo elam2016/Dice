@@ -50,17 +50,12 @@ class Die //models one single dice cube
 		mySize = cubeSize;
 		pipSize = mySize/5;
 		numRoll = ((int)(Math.random()*6) + 1);
-		//sum = numRoll;
-	}
-	void roll()
-	{ //your code here
-		//numRoll = (int)(Math.random()*6) + 1;
 	}
 	void show()
 	{ //your code here
 		fill(225);
 		rect(myX, myY, mySize, mySize);
-		fill(0);
+		fill((Math.random()*150) + 100);
 		if (numRoll == 1)
 		{
 			//numTotal = 1;
@@ -101,9 +96,5 @@ class Die //models one single dice cube
 			ellipse(myX + (mySize*4/5), myY + mySize/2, pipSize, pipSize);
 			ellipse(myX + mySize/5, myY + mySize/2, pipSize, pipSize);
 		}
-	}
-	void total()
-	{
-
 	}
 }
