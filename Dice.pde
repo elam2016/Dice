@@ -17,9 +17,7 @@ void draw()
 		for(int dieX = 0; dieX <= screenSize; dieX += mySize*2)
 		{
 			Die die1 = new Die(dieX, dieY, mySize);
-			//die1.roll();
 			die1.show();
-			//numTotal = numTotal + die1.numRoll;
 		}
 	}
 	for(int dieY = mySize; dieY <= screenSize; dieY += mySize*2) //second rows
@@ -27,9 +25,7 @@ void draw()
 		for(int dieX = mySize; dieX <= screenSize; dieX += mySize*2)
 		{
 			Die die2 = new Die(dieX, dieY, mySize);
-			//die2.roll();
 			die2.show();
-			//numTotal = numTotal + die2.numRoll;
 		}
 	}
 	fill(0);
