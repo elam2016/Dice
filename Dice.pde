@@ -1,36 +1,36 @@
-int screenSize = 400;
+int screenSize = 600;
 int myX, myY, mySize, numRoll, pipSize;
 int numTotal = 0;
+int wordSize = (screenSize*3/40);
 void setup()
 {
-	size(screenSize,screenSize + 30);
+	size(screenSize, (screenSize + wordSize));
 	noLoop();
 }
 void draw()
 {
-	//your code here
 	background(0);
-	mySize = screenSize/10; //the cubes will always be prportional to screenSize/10
+	mySize = screenSize/20; //the cubes will always be prportional to screenSize/#
 	numTotal = 0;
-	for(int dieY = 0; dieY <= screenSize - 30; dieY += mySize*2) //first rows
+	for(int dieY = 0; dieY <= screenSize - wordSize; dieY += mySize*2) //first rows
 	{
-		for(int dieX = 0; dieX <= screenSize - 30; dieX += mySize*2)
+		for(int dieX = 0; dieX <= screenSize - wordSize; dieX += mySize*2)
 		{
 			Die die1 = new Die(dieX, dieY, mySize);
 			die1.show();
 		}
 	}
-	for(int dieY = mySize; dieY <= screenSize - 30; dieY += mySize*2) //second rows
+	for(int dieY = mySize; dieY <= screenSize; dieY += mySize*2) //second rows
 	{
-		for(int dieX = mySize; dieX <= screenSize - 30; dieX += mySize*2)
+		for(int dieX = mySize; dieX <= screenSize; dieX += mySize*2)
 		{
 			Die die2 = new Die(dieX, dieY, mySize);
 			die2.show();
 		}
 	}
 	fill(100);
-	textSize(30);
-	text("Total: " + numTotal, 10, screenSize + 30); //total at bottom of screen
+	textSize(wordSize);
+	text("Total: " + numTotal, 10, screenSize + wordSize); //total at bottom of screen
 	fill(255);
 }
 void mousePressed()
@@ -39,17 +39,17 @@ void mousePressed()
 	numTotal = 0; //total always starts at zero
 }
 class Die //models one single dice cube
-{ //variable declarations here
+{
 	Die(int x, int y, int cubeSize) //constructor
-	{ //variable initializations here
+	{
 		myX = x;
 		myY = y;
 		mySize = cubeSize;
-		pipSize = mySize/5; //the pips will always be proportional to mySize/5
+		pipSize = mySize/5; //the pips will always be proportional to mySize/#
 		numRoll = ((int)(Math.random()*6) + 1);
 	}
 	void show()
-	{ //your code here
+	{
 		fill(225);
 		rect(myX, myY, mySize, mySize);
 		fill((int)(Math.random()*100) + 125, (int)(Math.random()*100) + 125, (int)(Math.random()*100) + 125);
