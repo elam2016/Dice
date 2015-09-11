@@ -28,7 +28,7 @@ void draw()
 			die2.show();
 		}
 	}
-	fill(200);
+	fill(100);
 	text("Total: " + numTotal, 50, 10);
 	fill(255);
 }
