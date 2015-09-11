@@ -29,8 +29,8 @@ void draw()
 		}
 	}
 	fill(100);
-	textSize(15);
-	text("Total: " + numTotal, 10, screenSize + 10);
+	textSize(30);
+	text("Total: " + numTotal, 10, screenSize + 30);
 	fill(255);
 }
 void mousePressed()
@@ -52,7 +52,7 @@ class Die //models one single dice cube
 	{ //your code here
 		fill(225);
 		rect(myX, myY, mySize, mySize);
-		fill((Math.random()*100) + 100, (Math.random()*100) + 100, (Math.random()*100) + 100);
+		fill((int)(Math.random()*100) + 75, (int)(Math.random()*100) + 75, (int)(Math.random()*100) + 75);
 		if (numRoll == 1)
 		{
 			numTotal ++;
