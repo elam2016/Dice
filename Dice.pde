@@ -10,7 +10,7 @@ void draw()
 {
 	//your code here
 	background(0);
-	mySize = screenSize/10;
+	mySize = screenSize/10; //the cubes will always be prportional to screenSize/10
 	numTotal = 0;
 	for(int dieY = 0; dieY <= screenSize - 30; dieY += mySize*2) //first rows
 	{
@@ -30,13 +30,13 @@ void draw()
 	}
 	fill(100);
 	textSize(30);
-	text("Total: " + numTotal, 10, screenSize + 30);
+	text("Total: " + numTotal, 10, screenSize + 30); //total at bottom of screen
 	fill(255);
 }
 void mousePressed()
 {
 	redraw();
-	numTotal = 0;
+	numTotal = 0; //total always starts at zero
 }
 class Die //models one single dice cube
 { //variable declarations here
@@ -45,7 +45,7 @@ class Die //models one single dice cube
 		myX = x;
 		myY = y;
 		mySize = cubeSize;
-		pipSize = mySize/5;
+		pipSize = mySize/5; //the pips will always be proportional to mySize/5
 		numRoll = ((int)(Math.random()*6) + 1);
 	}
 	void show()
@@ -83,7 +83,7 @@ class Die //models one single dice cube
 			ellipse(myX + (mySize*4/5), (myY + mySize*4/5), pipSize, pipSize);
 			ellipse(myX +( mySize*4/5), myY + mySize/5, pipSize, pipSize);
 			ellipse(myX + mySize/5, myY + (mySize*4/5), pipSize, pipSize);
-		} else
+		} else //if not 1-5, will be 6
 		{
 			numTotal += 6;
 			ellipse(myX + mySize/5, myY + mySize/5, pipSize, pipSize);
