@@ -3,7 +3,7 @@ int myX, myY, mySize, numRoll, pipSize;
 int numTotal = 0;
 void setup()
 {
-	size(screenSize + 30,screenSize + 30);
+	size(screenSize,screenSize + 30);
 	noLoop();
 }
 void draw()
