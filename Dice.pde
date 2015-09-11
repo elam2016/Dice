@@ -12,17 +12,17 @@ void draw()
 	background(0);
 	mySize = screenSize/10;
 	numTotal = 0;
-	for(int dieY = 0; dieY <= screenSize; dieY += mySize*2) //first rows
+	for(int dieY = 0; dieY <= screenSize - 30; dieY += mySize*2) //first rows
 	{
-		for(int dieX = 0; dieX <= screenSize; dieX += mySize*2)
+		for(int dieX = 0; dieX <= screenSize - 30; dieX += mySize*2)
 		{
 			Die die1 = new Die(dieX, dieY, mySize);
 			die1.show();
 		}
 	}
-	for(int dieY = mySize; dieY <= screenSize; dieY += mySize*2) //second rows
+	for(int dieY = mySize; dieY <= screenSize - 30; dieY += mySize*2) //second rows
 	{
-		for(int dieX = mySize; dieX <= screenSize; dieX += mySize*2)
+		for(int dieX = mySize; dieX <= screenSize - 30; dieX += mySize*2)
 		{
 			Die die2 = new Die(dieX, dieY, mySize);
 			die2.show();
