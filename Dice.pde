@@ -3,7 +3,7 @@ int myX, myY, mySize, numRoll, pipSize;
 int numTotal = 0;
 void setup()
 {
-	size(screenSize,screenSize);
+	size(screenSize + 30,screenSize + 30);
 	noLoop();
 }
 void draw()
@@ -29,7 +29,7 @@ void draw()
 		}
 	}
 	fill(100);
-	text("Total: " + numTotal, 50, 10);
+	text("Total: " + numTotal, 10, screenSize + 10);
 	fill(255);
 }
 void mousePressed()
