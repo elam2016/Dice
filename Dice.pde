@@ -29,6 +29,7 @@ void draw()
 		}
 	}
 	fill(100);
+	textSize(15);
 	text("Total: " + numTotal, 10, screenSize + 10);
 	fill(255);
 }
