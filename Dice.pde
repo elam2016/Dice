@@ -1,4 +1,4 @@
-int screenSize = 600;
+int screenSize = 800;
 int myX, myY, mySize, numRoll, pipSize;
 int numTotal = 0;
 int wordSize = (screenSize*3/40);
